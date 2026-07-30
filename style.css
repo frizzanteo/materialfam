@@ -464,8 +464,8 @@ button {
 .initiatives-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   margin-top: 12px;
+  /* Remove gap — borders act as separators */
 }
 
 .initiative-item {
@@ -474,7 +474,15 @@ button {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between; /* justified: name left, link right */
   gap: 8px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Bottom border on the last item to close the list */
+.initiative-item:last-child {
+  border-bottom: 1px solid var(--color-border);
 }
 
 .initiative-link {
