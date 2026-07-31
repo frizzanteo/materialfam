@@ -22,7 +22,6 @@
       <nav class="navbar" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="#project">Project</a></li>
-          <li><a href="#team">Team</a></li>
           <li><a href="#proposal">Proposal</a></li>
           <li><a href="#fam">FAM</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -42,8 +41,10 @@
             <img src="animationhomepage/fam-cube.svg" alt="FAM Cube" class="hero-cube fam-cube">
             <img src="animationhomepage/mama-cube.svg" alt="Mama Cube" class="hero-cube small-cube mama-cube">
             <img src="animationhomepage/rex-cube.svg" alt="Rex Cube" class="hero-cube small-cube rex-cube">
-            <img src="animationhomepage/silandro-cube.svg" alt="Silandro Cube" class="hero-cube small-cube silandro-cube">
+            <img src="animationhomepage/silandro-cube.svg" alt="Silandro Cube"
+              class="hero-cube small-cube silandro-cube">
             <img src="animationhomepage/viel-cube.svg" alt="Viel Cube" class="hero-cube small-cube viel-cube">
+            <!--  <img src="animationhomepage/next-one.svg" alt="Next One Cube" class="hero-cube small-cube next-one-cube">  -->
           </div>
         </div>
         <div class="hero-text-block">
@@ -54,10 +55,22 @@
         </div>
       </section>
 
+      <br id="project">
+
       <!-- WHAT IS A MATERIAL INITIATIVE? SECTION -->
-      <section id="project" class="section-block gsap-reveal" style="margin-top: 40px;">
+      <section class="section-block gsap-reveal" style="margin-top: 40px;">
         <div class="two-col-grid asymmetric-left">
-          <!-- Left Text Column -->
+          <!-- Left Column Text + Illustration -->
+          <div style="display: flex; flex-direction: column; gap: 48px;">
+            <h2 class="heading-xl">
+              A <span class="font-medium">material Initiative</span> helps the “digestion“ of material offcuts in a
+              territory.
+            </h2>
+            <div class="illus-card">
+              <img src="illustrations/digestion.svg" alt="Digestion of material offcuts illustration" loading="lazy">
+            </div>
+          </div>
+          <!-- Right Text Column -->
           <div style="display: flex; flex-direction: column; gap: 48px;">
             <p class="body-lg">
               Is a physical place where materials of every kind (besides toxic and dangerous one), that are still in
@@ -67,15 +80,38 @@
               Therefore they are useful to reduce waste production, promote sustainability and enhance circular economy.
             </p>
           </div>
-          <!-- Right Column Text + Illustration -->
-          <div style="display: flex; flex-direction: column; gap: 48px;">
+
+        </div>
+      </section>
+
+
+      <!-- SOUTH TYROL / MAP SECTION -->
+      <section class="section-block gsap-reveal">
+        <div class="two-col-grid" style="align-items: center;">
+          <div style="display: flex; flex-direction: column; gap: 24px;">
             <h2 class="heading-xl">
-              A <span class="font-medium">material Initiative</span> helps the “digestion“ of material offcuts in a
-              territory.
+              South Tyrol <span class="font-medium">does not sit around</span>.
             </h2>
-            <div class="illus-card">
-              <img src="illustrations/digestion.svg" alt="Digestion of material offcuts illustration" loading="lazy">
-            </div>
+            <p class="body-lg font-myriad">
+              We can count already 3 running initiative - Bolzano, Bressanone and Lana - and 1 starting soon in
+              Silandro.
+              <br> <br>
+              They made a video for you:
+            </p>
+          </div>
+          <div class="illus-card">
+            <img src="illustrations/Mappa.svg" alt="South Tyrol Material Initiatives Map" loading="lazy">
+          </div>
+        </div>
+
+        <!-- VIDEO MEDIA SECTION -->
+        <div style="margin-top: 48px; width: 100%; display: flex; justify-content: center;">
+          <div class="hero-media-wrapper gsap-reveal-scale" style="max-width: 976px;">
+            <video class="hero-video" controls playsinline poster="images/fallbackvideo.png">
+              <source src="video/Materialinitiative for website.mov" type="video/quicktime">
+              <source src="video/Materialinitiative for website.mov" type="video/mp4">
+              <img src="images/fallbackvideo.png" alt="Material Initiative Showcase Video" loading="lazy">
+            </video>
           </div>
         </div>
       </section>
@@ -118,50 +154,27 @@
         </div>
       </section>
 
-      <!-- SOUTH TYROL / MAP SECTION -->
-      <section id="team" class="section-block gsap-reveal">
-        <div class="two-col-grid" style="align-items: center;">
-          <div style="display: flex; flex-direction: column; gap: 24px;">
-            <h2 class="heading-xl">
-              South Tyrol <span class="font-medium">does not sit around</span>.
-            </h2>
-            <p class="body-lg font-myriad">
-              We can count already 3 running initiative - Bolzano, Bressanone and Lana - and 1 starting soon in
-              Silandro.
-            </p>
-          </div>
-          <div class="illus-card">
-            <img src="illustrations/Mappa.svg" alt="South Tyrol Material Initiatives Map" loading="lazy">
-          </div>
-        </div>
-
-        <!-- VIDEO MEDIA SECTION -->
-        <div style="margin-top: 48px; width: 100%; display: flex; justify-content: center;">
-          <div class="hero-media-wrapper gsap-reveal-scale" style="max-width: 976px;">
-            <video class="hero-video" controls playsinline poster="images/fallbackvideo.png">
-              <source src="video/Materialinitiative for website.mov" type="video/quicktime">
-              <source src="video/Materialinitiative for website.mov" type="video/mp4">
-              <img src="images/fallbackvideo.png" alt="Material Initiative Showcase Video" loading="lazy">
-            </video>
-          </div>
-        </div>
-      </section>
-
       <!-- IMPACT ON THE ECONOMY SECTION -->
       <section class="section-block gsap-reveal">
         <h2 class="heading-xl">Impact on the economy - a practical example:</h2>
         <p class="body-lg font-myriad">
-          A small workshop for a class of 20 children, with a consume of 0,5 m² per children of plywood, would cost 529€
+          A small workshop for a class of 20 children, with a consume of 0,5 m² per children of plywood, would cost
+          529€
           for the material only. This cost would be entirely avoidable by recovering offcuts daily produced by
           carpentry.
         </p>
       </section>
 
+      <br id="proposal">
+
+
+
       <!-- OUR PROPOSAL SECTION -->
-      <section id="proposal" class="section-block gsap-reveal">
+      <section class="section-block gsap-reveal">
         <h2 class="heading-xl">Our Proposal</h2>
         <p class="body-lg font-myriad" style="margin-bottom: 40px;">
-          Building a centralized space (ideally in Bolzano) for reuse in South Tyrol, with a dedicated and fixed staff,
+          Building a centralized space (ideally in Bolzano) for reuse in South Tyrol, with a dedicated and fixed
+          staff,
           would help vastly material recovery and redistribution on the territory:
         </p>
 
@@ -170,11 +183,13 @@
           <div class="proposal-item">
             <div style="display: flex; flex-direction: column; gap: 24px;">
               <p class="body-lg font-myriad">
-                A headquarter would allow sharing practices and methodologies, ensuring the quality of material storing
+                A headquarter would allow sharing practices and methodologies, ensuring the quality of material
+                storing
                 and cataloguation.
               </p>
               <p class="body-lg font-myriad">
-                This would allow the creation of a rich and diverse program for sustainability material-driven education
+                This would allow the creation of a rich and diverse program for sustainability material-driven
+                education
                 - giving also opportunity for volunteering or Young Action project.
               </p>
             </div>
@@ -224,55 +239,90 @@
               </p>
             </div>
           </div>
+
         </div>
 
+        <!-- Manifesto Download Section -->
+        <div class="two-col-grid gsap-reveal"
+          style="margin-top: 56px; align-items: stretch; border-top: var(--border-width-standard) solid var(--color-border); border-bottom: var(--border-width-standard) solid var(--color-border);">
+          <div
+            style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start; justify-content: center; padding: 40px 0;">
+            <h3 class="heading-xl">
+              Want to know more?<br>
+              <span class="font-medium">Download our trilingual manifesto</span>
+            </h3>
+            <a href="pdf/manifesto.pdf" download class="download-btn">Download Manifesto (PDF)</a>
+          </div>
+          <div class="manifesto-image-col">
+            <div class="illus-card"
+              style="width: 100%; height: 100%; min-height: 240px; background-color: #f2f2f2; display: flex; align-items: center; justify-content: center; border-left: var(--border-width-standard) solid var(--color-border);">
+              <span style="color: var(--color-text-muted); font-family: var(--font-myriad);">[ Placeholder Image
+                ]</span>
+            </div>
+          </div>
+        </div>
       </section>
 
+      <br id="fam">
+
       <!-- THE FAM (UNTIL NOW) SECTION -->
-      <section id="fam" class="fam-grid-section gsap-reveal">
+      <section class="fam-grid-section gsap-reveal">
         <h2 class="heading-xl">The FAM (until now)</h2>
         <div class="fam-grid">
           <!-- Partner Card 1 -->
           <div class="fam-card gsap-reveal-scale">
-            <div class="fam-logo-box">
+            <a href="https://www.rex-bx.it/it/home-it/" target="_blank" rel="noopener noreferrer" class="fam-logo-box">
               <img src="logos/rex.svg" alt="REX Materiali e cose logo">
-            </div>
+            </a>
             <div class="fam-info-box">
               <div class="fam-card-title">REX - Materiali e cose</div>
               <div class="fam-card-location">Bressanone</div>
+              <div class="fam-card-contact">Name Surname</div>
+              <div class="fam-card-contact">mail@mail.bla</div>
+
             </div>
           </div>
 
           <!-- Partner Card 2 -->
           <div class="fam-card gsap-reveal-scale">
-            <div class="fam-logo-box">
+            <a href="https://mamabz.com/" target="_blank" rel="noopener noreferrer" class="fam-logo-box">
               <img src="logos/mama.svg" alt="Material Matters logo">
-            </div>
+            </a>
             <div class="fam-info-box">
               <div class="fam-card-title">Material Matters!</div>
               <div class="fam-card-location">Libera Università di Bolzano</div>
+              <div class="fam-card-contact">Name Surname</div>
+              <div class="fam-card-contact">mail@mail.bla</div>
+
             </div>
           </div>
 
           <!-- Partner Card 3 -->
           <div class="fam-card gsap-reveal-scale">
-            <div class="fam-logo-box">
+            <a href="" target="_blank" rel="noopener noreferrer" class="fam-logo-box">
               <img src="logos/viel.svg" alt="VIEL DA TUTTO QUI logo">
-            </div>
+            </a>
             <div class="fam-info-box">
               <div class="fam-card-title">VIEL&gt;DA TUTTO&gt;QUI</div>
               <div class="fam-card-location">Lana</div>
+              <div class="fam-card-contact">Name Surname</div>
+              <div class="fam-card-contact">mail@mail.bla</div>
+
             </div>
           </div>
 
           <!-- Partner Card 4 -->
           <div class="fam-card gsap-reveal-scale">
-            <div class="fam-logo-box">
+            <a href="" target="_blank" rel="noopener noreferrer" class="fam-logo-box">
               <img src="logos/silandro.svg" alt="Mercato dei Materiali logo">
-            </div>
+            </a>
             <div class="fam-info-box">
               <div class="fam-card-title">Mercato dei Materiali</div>
               <div class="fam-card-location">Silandro</div>
+              <div class="fam-card-contact">Name Surname</div>
+              <div class="fam-card-contact">mail@mail.bla</div>
+
+
             </div>
           </div>
         </div>
@@ -285,11 +335,32 @@
       <div class="footer-divider"></div>
       <div class="footer-content">
         <div class="footer-contact-title">
-          Need infos?<br>contact us
+          Want to join the fam?<br>
+          Let's get in touch
         </div>
         <div class="footer-contact-details font-myriad">
           <a href="mailto:mail@blabla.com" style="display: block;">mail@blabla.com</a>
           <a href="tel:+3993403304920" style="display: block; margin-top: 8px;">+39 93403 304920</a>
+        </div>
+      </div>
+
+      <!-- SPONSORS SECTION -->
+      <div class="footer-sponsors">
+        <p class="sponsors-title">Supported by</p>
+        <div class="sponsors-grid">
+          <!-- Placeholder logos - add actual sponsor img tags here -->
+          <div class="sponsor-logo-wrapper">
+            <img src="images/fallbackvideo.png" alt="Sponsor Logo">
+          </div>
+          <div class="sponsor-logo-wrapper">
+            <img src="images/fallbackvideo.png" alt="Sponsor Logo">
+          </div>
+          <div class="sponsor-logo-wrapper">
+            <img src="images/fallbackvideo.png" alt="Sponsor Logo">
+          </div>
+          <div class="sponsor-logo-wrapper">
+            <img src="images/fallbackvideo.png" alt="Sponsor Logo">
+          </div>
         </div>
       </div>
     </footer>

@@ -119,6 +119,10 @@ button {
   font-family: inherit;
 }
 
+br {
+  height: 0px;
+}
+
 /* ==========================================================================
    TYPOGRAPHY UTILITIES
    ========================================================================== */
@@ -317,11 +321,11 @@ button {
 
 /* Positions: left = x/438*100%, top = y/360*100%, width = w/438*100% */
 .viel-cube {
-  left: 36.9%;
+  left: 37%;
   /* 52px / 438px */
-  top: -0.6%;
+  top: -0.5%;
   /* -2px / 360px */
-  z-index: 71;
+  z-index: 75;
   width: 23.7%;
   /* 104px / 438px */
 }
@@ -370,6 +374,16 @@ button {
   top: 25%;
   /* 90px / 360px */
   z-index: 50;
+  width: 23.7%;
+  /* 104px / 438px */
+}
+
+.next-one-cube {
+  left: 76.3%;
+  /* 334px / 438px — same column as rex-cube */
+  top: 55%;
+  /* ~198px / 360px — below rex, bottom-right area */
+  z-index: 15;
   width: 23.7%;
   /* 104px / 438px */
 }
@@ -474,7 +488,8 @@ button {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between; /* justified: name left, link right */
+  justify-content: space-between;
+  /* justified: name left, link right */
   gap: 8px;
   padding: 14px 0;
   border-top: 1px solid var(--color-border);
@@ -572,22 +587,22 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
-  background-color: var(--color-white);
-  flex-shrink: 0;
-  transition: transform var(--transition-fast);
-
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.fam-card:hover .fam-logo-box {
-  transform: scale(1.03);
+
+
+.fam-logo-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px rgb(0, 0, 0);
+  /* gives a slight 3D "cube" volume on the right */
 }
+
 
 .fam-info-box {
   flex: 1;
-  height: 90px;
-  border: var(--border-width-standard) solid var(--color-border);
-  background-color: var(--color-white);
+  min-height: 90px;
+  height: auto;
   padding: 12px 16px;
   display: flex;
   flex-direction: column;
@@ -597,7 +612,7 @@ button {
 }
 
 .fam-card:hover .fam-info-box {
-  background-color: var(--color-gray-subtle);
+  background-color: #f2f2f2ea
 }
 
 .fam-card-title {
@@ -609,6 +624,47 @@ button {
 .fam-card-location {
   font-size: clamp(0.85rem, 1.2vw, 1.05rem);
   color: var(--color-text-muted);
+}
+
+
+.fam-card-contact {
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  color: var(--color-bg-dark);
+  margin-top: 2px;
+}
+
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background-color: var(--color-bg-dark);
+  color: var(--color-white);
+  font-family: var(--font-myriad);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 3px solid var(--color-bg-dark);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.download-btn:hover {
+  background-color: #ffffff;
+  color: var(--color-bg-dark);
+  border: 3px solid var(--color-bg-dark);
+}
+
+.manifesto-image-col {
+  display: none;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .manifesto-image-col {
+    display: flex;
+  }
 }
 
 /* ==========================================================================
@@ -647,9 +703,10 @@ button {
 .footer-contact-title {
   font-size: clamp(1.4rem, 2.8vw, 2.1rem);
   line-height: 1.15;
+  font-family: var(--font-tomorrow--medium);
 }
 
-.footer-contact-details {
+ß .footer-contact-details {
   font-size: clamp(1.05rem, 1.8vw, 1.35rem);
   text-align: left;
   line-height: 1.35;
@@ -659,6 +716,42 @@ button {
   .footer-contact-details {
     text-align: right;
   }
+}
+
+.footer-sponsors {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: var(--border-width-standard) solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sponsors-title {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: var(--color-text-muted);
+  font-family: var(--font-myriad);
+}
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.sponsor-logo-wrapper {
+  width: 222px;
+  height: 110;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sponsor-logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* ==========================================================================

@@ -78,6 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
     delay: 0.2
   });
 
+  gsap.to('.next-one-cube', {
+    x: () => -20 * scale(),
+    y: () => 22 * scale(),
+    duration: 3.2,
+    yoyo: true,
+    repeat: -1,
+    ease: 'power1.inOut',
+    delay: 0.9
+  });
+
   // Invalidate GSAP values on resize so distances stay proportional
   window.addEventListener('resize', () => gsap.globalTimeline.invalidate());
 
