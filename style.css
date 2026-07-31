@@ -81,7 +81,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 15px;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 130px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
