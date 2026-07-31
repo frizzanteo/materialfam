@@ -81,6 +81,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 15px;
+  scroll-padding-top: 80px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -119,9 +120,7 @@ button {
   font-family: inherit;
 }
 
-br {
-  height: 0px;
-}
+
 
 /* ==========================================================================
    TYPOGRAPHY UTILITIES
