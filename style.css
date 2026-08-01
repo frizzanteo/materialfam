@@ -472,6 +472,49 @@ button {
 }
 
 /* ==========================================================================
+   MOVEMENT ANIMATION (Proposal Section)
+   ========================================================================== */
+
+/* The wave oscillates along the isometric axis (right-down → left-up).
+   All values are in % of the block's own rendered size so the animation
+   scales perfectly with the container at every viewport width. */
+@keyframes mv-shift {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(8%, 4.6%); }
+  100% { transform: translate(0, 0); }
+}
+
+.movement-anim-wrapper {
+  width: 100%;
+}
+
+.movement-anim-container {
+  position: relative;
+  width: 100%;
+  /* Aspect ratio matches original illustration: 575 × 349 */
+  aspect-ratio: 575 / 349;
+  overflow: visible;
+}
+
+.mv-block {
+  position: absolute;
+  width: 29.23%;
+  animation: mv-shift 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Stagger each block by its diagonal index (col + row) × 0.18 s */
+.mv-block[data-col="0"][data-row="0"] { animation-delay: 0s; }
+.mv-block[data-col="1"][data-row="0"] { animation-delay: 0.18s; }
+.mv-block[data-col="1"][data-row="1"] { animation-delay: 0.36s; }
+.mv-block[data-col="2"][data-row="0"] { animation-delay: 0.36s; }
+.mv-block[data-col="2"][data-row="1"] { animation-delay: 0.54s; }
+.mv-block[data-col="2"][data-row="2"] { animation-delay: 0.72s; }
+.mv-block[data-col="3"][data-row="0"] { animation-delay: 0.54s; }
+.mv-block[data-col="3"][data-row="1"] { animation-delay: 0.72s; }
+.mv-block[data-col="3"][data-row="2"] { animation-delay: 0.9s; }
+.mv-block[data-col="3"][data-row="3"] { animation-delay: 1.08s; }
+
+/* ==========================================================================
    EUROPEAN MODELS LIST SECTION
    ========================================================================== */
 .initiatives-list {

@@ -91,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Invalidate GSAP values on resize so distances stay proportional
   window.addEventListener('resize', () => gsap.globalTimeline.invalidate());
 
+  // Movement Illustration Animation is handled by CSS keyframes (responsive by default)
+
 
   // 3. Reveal Animations on Scroll (.gsap-reveal)
   const revealElements = gsap.utils.toArray('.gsap-reveal:not(.site-header):not(.hero-section)');
