@@ -1,3 +1,37 @@
 RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --- MIME Types ---
+# Fonts
+AddType font/woff             .woff
+AddType font/woff2            .woff2
+AddType application/font-sfnt .ttf .otf
+
+# SVG
+AddType image/svg+xml .svg
+
+# Video
+AddType video/mp4       .mp4
+AddType video/quicktime .mov
+AddType video/webm      .webm
+
+# PDF
+AddType application/pdf .pdf
+
+# --- Compression (speeds up font/CSS delivery) ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml font/woff font/woff2
+</IfModule>
+
+# --- Caching for static assets ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/svg+xml    "access plus 1 month"
+  ExpiresByType image/png        "access plus 1 month"
+  ExpiresByType image/jpeg       "access plus 1 month"
+  ExpiresByType font/woff        "access plus 1 year"
+  ExpiresByType font/woff2       "access plus 1 year"
+  ExpiresByType text/css         "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

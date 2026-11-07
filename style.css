@@ -49,7 +49,7 @@
 
   /* Typography Tokens */
   --font-tomorrow: 'Tomorrow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-myriad: 'Myriad Pro', 'Tomorrow', sans-serif;
+  --font-myriad: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
   /* Spacing Tokens */
   --space-xs: 6px;
@@ -264,6 +264,10 @@ button {
   width: 100%;
 }
 
+.lang-selector-wrapper {
+  position: relative;
+}
+
 .lang-selector {
   width: 36px;
   height: 34px;
@@ -274,10 +278,53 @@ button {
   font-size: 16px;
   font-family: var(--font-tomorrow);
   font-weight: 400;
+  cursor: pointer;
+  user-select: none;
   transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-.lang-selector:hover {
+.lang-selector:hover,
+.lang-selector-wrapper.is-open .lang-selector {
+  background-color: var(--color-text-main);
+  color: var(--color-white);
+}
+
+/* Dropdown panel — toggled by JS via .is-open */
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  flex-direction: column;
+  border: var(--border-width-standard) solid var(--color-border);
+  background-color: var(--color-white);
+  z-index: 200;
+  min-width: 36px;
+}
+
+.lang-selector-wrapper.is-open .lang-dropdown {
+  display: flex;
+}
+
+.lang-dropdown a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  font-size: 16px;
+  font-family: var(--font-tomorrow);
+  font-weight: 400;
+  color: var(--color-text-main);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.lang-dropdown a:not(:first-child) {
+  border-top: var(--border-width-standard) solid var(--color-border);
+}
+
+.lang-dropdown a:hover,
+.lang-dropdown a.lang-active {
   background-color: var(--color-text-main);
   color: var(--color-white);
 }
@@ -479,9 +526,17 @@ button {
    All values are in % of the block's own rendered size so the animation
    scales perfectly with the container at every viewport width. */
 @keyframes mv-shift {
-  0%   { transform: translate(0, 0); }
-  50%  { transform: translate(8%, 4.6%); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(8%, 4.6%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .movement-anim-wrapper {
@@ -503,16 +558,45 @@ button {
 }
 
 /* Stagger each block by its diagonal index (col + row) × 0.18 s */
-.mv-block[data-col="0"][data-row="0"] { animation-delay: 0s; }
-.mv-block[data-col="1"][data-row="0"] { animation-delay: 0.18s; }
-.mv-block[data-col="1"][data-row="1"] { animation-delay: 0.36s; }
-.mv-block[data-col="2"][data-row="0"] { animation-delay: 0.36s; }
-.mv-block[data-col="2"][data-row="1"] { animation-delay: 0.54s; }
-.mv-block[data-col="2"][data-row="2"] { animation-delay: 0.72s; }
-.mv-block[data-col="3"][data-row="0"] { animation-delay: 0.54s; }
-.mv-block[data-col="3"][data-row="1"] { animation-delay: 0.72s; }
-.mv-block[data-col="3"][data-row="2"] { animation-delay: 0.9s; }
-.mv-block[data-col="3"][data-row="3"] { animation-delay: 1.08s; }
+.mv-block[data-col="0"][data-row="0"] {
+  animation-delay: 0s;
+}
+
+.mv-block[data-col="1"][data-row="0"] {
+  animation-delay: 0.18s;
+}
+
+.mv-block[data-col="1"][data-row="1"] {
+  animation-delay: 0.36s;
+}
+
+.mv-block[data-col="2"][data-row="0"] {
+  animation-delay: 0.36s;
+}
+
+.mv-block[data-col="2"][data-row="1"] {
+  animation-delay: 0.54s;
+}
+
+.mv-block[data-col="2"][data-row="2"] {
+  animation-delay: 0.72s;
+}
+
+.mv-block[data-col="3"][data-row="0"] {
+  animation-delay: 0.54s;
+}
+
+.mv-block[data-col="3"][data-row="1"] {
+  animation-delay: 0.72s;
+}
+
+.mv-block[data-col="3"][data-row="2"] {
+  animation-delay: 0.9s;
+}
+
+.mv-block[data-col="3"][data-row="3"] {
+  animation-delay: 1.08s;
+}
 
 /* ==========================================================================
    EUROPEAN MODELS LIST SECTION
@@ -802,4 +886,121 @@ button {
 .gsap-reveal,
 .gsap-reveal-scale {
   will-change: opacity, transform;
+}
+
+
+/* ==========================================================================
+   INLINE STYLE EXTRACTIONS
+   Previously written as inline style="" attributes in index.html
+   ========================================================================== */
+
+/* --- Section spacing --- */
+#project {
+  margin-top: 40px;
+}
+
+/* --- Flex column helpers (gap variants) --- */
+.flex-col-gap-16 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flex-col-gap-24 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.flex-col-gap-48 {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* --- Grid alignment modifiers --- */
+.two-col-grid.align-center {
+  align-items: center;
+}
+
+.two-col-grid.align-stretch {
+  align-items: stretch;
+}
+
+/* --- Illustration scale --- */
+.illus-card img.scale-80 {
+  scale: 80%;
+}
+
+/* --- Video wrapper centering --- */
+.video-section-wrapper {
+  margin-top: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.video-section-wrapper .hero-media-wrapper {
+  max-width: 976px;
+}
+
+/* --- Proposal section paragraph spacing --- */
+.proposal-intro {
+  margin-bottom: 40px;
+}
+
+/* --- Proposal item spacing --- */
+.proposal-item {
+  margin-top: 24px;
+}
+
+/* --- Proposal item 3 grid modifier --- */
+.proposal-item-3 {
+  margin-top: 24px;
+  align-items: center;
+}
+
+/* --- Manifesto download row --- */
+.manifesto-download-row {
+  margin-top: 56px;
+  align-items: stretch;
+  border-top: var(--border-width-standard) solid var(--color-border);
+  border-bottom: var(--border-width-standard) solid var(--color-border);
+}
+
+/* --- Manifesto text column --- */
+.manifesto-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+/* --- Manifesto image panel --- */
+.manifesto-image-panel {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: var(--border-width-standard) solid var(--color-border);
+}
+
+/* --- Manifesto image caption span --- */
+.manifesto-image-panel span {
+  color: var(--color-text-muted);
+  font-family: var(--font-myriad);
+}
+
+/* --- Footer contact links --- */
+.footer-contact-details a {
+  display: block;
+}
+
+.footer-contact-details a+a {
+  margin-top: 8px;
 }

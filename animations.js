@@ -172,6 +172,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', updateActiveNav);
 
+  // 6. Language Selector — click-toggle dropdown
+  const langWrapper = document.querySelector('.lang-selector-wrapper');
+  const langBtn     = langWrapper && langWrapper.querySelector('.lang-selector');
 
+  if (langWrapper && langBtn) {
+    // Toggle open/closed on button click
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langWrapper.classList.toggle('is-open');
+    });
+
+    // Close when clicking anywhere else on the page
+    document.addEventListener('click', () => {
+      langWrapper.classList.remove('is-open');
+    });
+
+    // Prevent clicks inside the dropdown from closing it immediately
+    langWrapper.querySelector('.lang-dropdown').addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
 
 });

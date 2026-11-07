@@ -1,2 +1,17 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Binary assets — never apply line-ending conversion
+*.mov  binary
+*.mp4  binary
+*.webm binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary

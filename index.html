@@ -29,7 +29,14 @@
           <li><a href="#fam">FAM</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="lang-selector" aria-label="Language selector">EN</div>
+        <div class="lang-selector-wrapper">
+          <div class="lang-selector lang-current">EN</div>
+          <div class="lang-dropdown">
+            <a href="index.html" class="lang-active">EN</a>
+            <a href="de.html">DE</a>
+            <a href="it.html">IT</a>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -59,27 +66,29 @@
       </section>
 
       <!-- WHAT IS A MATERIAL INITIATIVE? SECTION -->
-      <section id="project" class="section-block gsap-reveal" style="margin-top: 40px;">
+      <section id="project" class="section-block gsap-reveal">
         <div class="two-col-grid asymmetric-left">
           <!-- Left Column Text + Illustration -->
-          <div style="display: flex; flex-direction: column; gap: 48px;">
+          <div class="flex-col-gap-48">
             <h2 class="heading-xl">
-              A <span class="font-medium">material Initiative</span> supports a healthy flow of material offcuts in a
+              A <span class="font-medium">material Initiative</span> supports a healthy flow of material offcuts in
+              a
               territory.
             </h2>
             <div class="illus-card">
               <img src="illustrations/digestion.svg" alt="Digestion of material offcuts illustration" loading="lazy"
-                style="scale: 80%;">
+                class="scale-80">
             </div>
           </div>
           <!-- Right Text Column -->
-          <div style="display: flex; flex-direction: column; gap: 48px;">
+          <div class="flex-col-gap-48">
             <p class="body-lg">
               Is a physical place where materials of every kind, that are still in
               good condition, are stored and organized in order to be available again for reuse purposes.
             </p>
             <p class="body-lg">
-              Therefore they are useful to reduce waste production, promote sustainability and enhance circular economy.
+              Therefore they are useful to reduce waste production, promote sustainability and enhance circular
+              economy.
               In short, closing the loop!
             </p>
           </div>
@@ -90,13 +99,14 @@
 
       <!-- SOUTH TYROL / MAP SECTION -->
       <section class="section-block gsap-reveal">
-        <div class="two-col-grid" style="align-items: center;">
-          <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div class="two-col-grid align-center">
+          <div class="flex-col-gap-24">
             <h2 class="heading-xl">
               South Tyrol <span class="font-medium">does not sit around</span>.
             </h2>
             <p class="body-lg font-myriad">
-              We can count already three running initiatives in Bolzano, Bressanone and Lana - and one coming up in
+              We can count already three running initiatives in Bolzano, Bressanone and Lana - and one coming up
+              in
               Silandro.
               <br> <br>
               They made a video for you:
@@ -108,11 +118,10 @@
         </div>
 
         <!-- VIDEO MEDIA SECTION -->
-        <div style="margin-top: 48px; width: 100%; display: flex; justify-content: center;">
-          <div class="hero-media-wrapper gsap-reveal-scale" style="max-width: 976px;">
+        <div class="video-section-wrapper">
+          <div class="hero-media-wrapper gsap-reveal-scale">
             <video class="hero-video" controls playsinline poster="images/fallbackvideo.png">
-              <source src="video/Materialinitiative for website.mov" type="video/quicktime">
-              <source src="video/Materialinitiative for website.mov" type="video/mp4">
+              <source src="video/MaterialInitiative%20S%C3%BCdtirol.mp4" type="video/mp4">
               <img src="images/fallbackvideo.png" alt="Material Initiative Showcase Video" loading="lazy">
             </video>
           </div>
@@ -124,9 +133,10 @@
       <!-- A MODEL THAT WORKS SECTION -->
       <section class="section-block gsap-reveal">
         <h2 class="heading-xl">A model <span class="font-medium">that works</span> !</h2>
-        <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div class="flex-col-gap-24">
           <p class="body-lg">
-            Around Europe we have already examples of successfully running initiatives, you can check some of them at
+            Around Europe we have already examples of successfully running initiatives, you can check some of them
+            at
             the links below:
           </p>
           <ul class="initiatives-list">
@@ -173,7 +183,7 @@
       <!-- OUR PROPOSAL SECTION -->
       <section id="proposal" class="section-block gsap-reveal">
         <h2 class="heading-xl">Our Proposal</h2>
-        <p class="body-lg font-myriad" style="margin-bottom: 40px;">
+        <p class="body-lg font-myriad proposal-intro">
           Building a centralized space (ideally in Bolzano) for reuse in South Tyrol, with a dedicated and fixed
           staff,
           would help vastly material recovery and redistribution on the territory:
@@ -181,15 +191,16 @@
 
         <div class="proposal-block">
           <!-- Proposal Item 1 -->
-          <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="flex-col-gap-24">
             <h3 class="proposal-title-header">
               Moving<br>in the same <span class="font-medium">direction.</span>
             </h3>
-            <div class="two-col-grid" style="align-items: center;">
+            <div class="two-col-grid align-center">
               <!-- Left: text paragraphs -->
-              <div style="display: flex; flex-direction: column; gap: 24px;">
+              <div class="flex-col-gap-24">
                 <p class="body-lg font-myriad">
-                  A headquarter would allow sharing practices and methodologies, ensuring the quality of material
+                  A headquarter would allow sharing practices and methodologies, ensuring the quality of
+                  material
                   storing and cataloguation.
                 </p>
                 <p class="body-lg font-myriad">
@@ -236,31 +247,34 @@
 
 
           <!-- Proposal Item 2 -->
-          <div class="proposal-item" style="margin-top: 24px;">
-            <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="proposal-item">
+            <div class="flex-col-gap-16">
               <div class="illus-card">
-                <img src="illustrations/sinergy.svg" alt="Sinergy Disco Illustration" style="scale: 80%;">
+                <img src="illustrations/sinergy.svg" alt="Sinergy Disco Illustration" class="scale-80">
               </div>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div class="flex-col-gap-24">
               <h3 class="proposal-title-header">
                 A space for <span class="font-medium">synergies.</span>
               </h3>
               <p class="body-lg font-myriad">
-                We are looking for a deposit area of approximate 200m² with scaffolding to store and sell different kind
+                We are looking for a deposit area of approximate 200m² with scaffolding to store and sell
+                different kind
                 of
                 materials.
               </p>
               <p class="body-lg font-myriad">
-                Fundamental woul be the realization of creative spaces for workshops, group activities and general
-                upcycling activities. For instance, these could be lead by creative professionals and young designers by
+                Fundamental woul be the realization of creative spaces for workshops, group activities and
+                general
+                upcycling activities. For instance, these could be lead by creative professionals and
+                young designers by
                 collaborating with the Free University of Bozen-Bolzano.
               </p>
             </div>
           </div>
 
           <!-- Proposal Item 3 -->
-          <div class="two-col-grid" style="margin-top: 24px; align-items: center;">
+          <div class="two-col-grid proposal-item-3">
             <div>
               <h3 class="heading-xl">
                 A coherent <span class="font-medium">system.</span>
@@ -268,7 +282,8 @@
             </div>
             <div>
               <p class="body-lg font-myriad">
-                Payments, tools, staff and spaces are going to follow the same principles, making material more
+                Payments, tools, staff and spaces are going to follow the same principles, making
+                material more
                 accessible and easy to distribute.
               </p>
             </div>
@@ -277,21 +292,18 @@
         </div>
 
         <!-- Manifesto Download Section -->
-        <div class="two-col-grid gsap-reveal"
-          style="margin-top: 56px; align-items: stretch; border-top: var(--border-width-standard) solid var(--color-border); border-bottom: var(--border-width-standard) solid var(--color-border);">
-          <div
-            style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start; justify-content: center; padding: 40px 0;">
+        <div class="two-col-grid gsap-reveal manifesto-download-row">
+          <div class="manifesto-text-col">
             <h3 class="heading-xl">
               Want to know more?<br>
               <span class="font-medium">Download our trilingual manifesto</span>
             </h3>
-            <a href="pdf/manifesto_placeholder.pdf" download class="download-btn">Download Manifesto (PDF)</a>
+            <a href="pdf/trilingual_manifesto.pdf" download class="download-btn">Download Manifesto
+              (PDF)</a>
           </div>
           <div class="manifesto-image-col">
-            <div class="illus-card"
-              style="width: 100%; height: 100%; min-height: 240px; background-color: #f2f2f2; display: flex; align-items: center; justify-content: center; border-left: var(--border-width-standard) solid var(--color-border);">
-              <span style="color: var(--color-text-muted); font-family: var(--font-myriad);">[ Placeholder Image
-                ]</span>
+            <div class="illus-card manifesto-image-panel">
+              <span><img src="images/Manifesto screenshot.png"></span>
             </div>
           </div>
         </div>
@@ -371,9 +383,9 @@
           <span>Want to join the fam?<br>Let's get in touch</span>
         </div>
         <div class="footer-contact-details font-myriad">
-          <a href="mailto:mail@blabla.com" style="display: block;">info@materialfam.eu
+          <a href="mailto:mail@blabla.com">info@materialfam.eu
           </a>
-          <a href="tel:+3993403304920" style="display: block; margin-top: 8px;">Whatsapp - Emily Guerra <br> +39 349 258
+          <a href="tel:+3993403304920">Whatsapp - Emily Guerra <br> +39 349 258
             8020 </a>
         </div>
       </div>
@@ -387,7 +399,7 @@
             <img src="logos/APBZ_Logo_Grey_CMYK_BW.jpg" alt="Sponsor Logo">
           </div>
           <div class="sponsor-logo-wrapper">
-            <img src="logos/Competence Centre for Sustainability_Black.png" alt="Sponsor Logo">
+            <img src="logos/Competence%20Centre%20for%20Sustainability_Black.png" alt="Sponsor Logo">
           </div>
           <div class="sponsor-logo-wrapper">
             <img src="logos/Logo-OEW-EO_4farbig.png" alt="OEW Sponsor Logo">
